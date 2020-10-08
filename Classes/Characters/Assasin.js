@@ -4,7 +4,7 @@ module.exports = class Assasin extends CharacterFrame {
   class;
   // attacks;
 
-  constructor(name, race, /*attacks*/) {
+  constructor(name, race) {
     super(name, race);
 
     this.class = "Assasin";
@@ -12,21 +12,13 @@ module.exports = class Assasin extends CharacterFrame {
      
   }
 
-  // attacks = [
-  //   { name: "Jab", damage: 5 },
-  //   { name: "Poison", damage: 10 },
-  //   { name: "Impale", damage: 15 },
-  // ];
-
-  // async myBio() {
-  //   return `${this.bio}`;
-  // }
+  attacks = [
+    { name: "Jab", damage: 5 },
+    { name: "Poison", damage: 10 },
+    { name: "Impale", damage: 15 },
+  ];
 
   async myClass() {
     return `${this.class}`;
   }
-
-  // async myAttacks(){
-  //   return `${this.attacks}`
-  // }
 };

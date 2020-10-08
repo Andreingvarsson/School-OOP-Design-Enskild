@@ -7,7 +7,7 @@ module.exports = class ClassBio {
     }
 
     static getAssasinBio(){
-        let bio = `The ASSASIN:\nSkilled with daggers, swords and poisons. She is a trained and versatile assasin.\n`;
+        let bio = `\nThe ASSASIN:\nSkilled with daggers, swords and poisons. She is a trained and versatile assasin.\n`;
        console.log(bio);
     };
 

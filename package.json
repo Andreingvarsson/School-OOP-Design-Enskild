@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "async-prompt": "^1.0.1",
     "prompt-async": "^0.9.9"
   },
   "devDependencies": {},

@@ -11,7 +11,7 @@ module.exports = class Game {
   constructor() {}
 
   async welcomeToPlayField() {
-    console.log("** ___________________________ **");
+    console.log("   ___________________________ ");
     console.log("**|                           |**");
     console.log("**| Welcome to this game!     |**");
     console.log("**| Create your own character |**");
@@ -58,19 +58,23 @@ module.exports = class Game {
       switch (choice) {
         case "1":
           console.log("Assasin");
-          // function() för assasin
+          // function() för assasin från factory
+          // this.pickrace();
           break;
         case "2":
           console.log("Barbarian");
-          // function() för barbarian
+          // function() för barbarian från factory
+          // this.pickrace();
           break;
         case "3":
           console.log("Wizard");
-          // function() för wizard
+          // function() för wizard från factory
+          // this.pickrace();
           break;
         case "4":
           console.log("Necromancer");
-          // function() för Necromancer
+          // function() för Necromancer från factory
+          // this.pickrace();
           break;
         case "5":
           ClassBio.getAllBios();
@@ -85,7 +89,7 @@ module.exports = class Game {
     let choice;
 
     while (choice !== "7") console.log("\nChoose a race to play as\n");
-    let choice = await prompt(
+     choice = await prompt(
       "\n1: Human\n2: Troll\n3: Dwarf\n4: Ogre\n5: Elf\n6: Orc\n7: Return\nEnter choice: "
     );
 
@@ -119,7 +123,8 @@ module.exports = class Game {
     }
   }
 
+  // från factory?
   async chooseCharacterName() {
-    const name = await prompt("Name of player:\n ");
+    const name = await prompt("\nChoose a name:\n ");
   }
 };
