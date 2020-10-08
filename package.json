@@ -1,0 +1,24 @@
+{
+  "name": "School-OOP-Design-Enskild",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "prompt-async": "^0.9.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andreingvarsson/School-OOP-Design-Enskild.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andreingvarsson/School-OOP-Design-Enskild/issues"
+  },
+  "homepage": "https://github.com/Andreingvarsson/School-OOP-Design-Enskild#readme"
+}
