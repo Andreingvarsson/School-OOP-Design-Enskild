@@ -6,9 +6,16 @@ const prompt = require("async-prompt");
 // const UserInteraction = require('../Interaction/UserInteraction')
 const ClassBio = require("../CharInformation/ClassBio");
 
-// Singleton design pattern möjligtvis??
-module.exports = class Game {
-  constructor() {}
+module.exports = class GameBoard {
+  // Singleton design pattern möjligtvis??
+  isGameCreated = false;
+
+  constructor() {
+    if (GameBoard.isGameCreated) {
+      throw new Error("Only one GameBoard can exist at a time!");
+    }
+    GameBoard.isGameCreated = true;
+  }
 
   async welcomeToPlayField() {
     console.log("   ___________________________ ");
@@ -37,7 +44,7 @@ module.exports = class Game {
           //function()
           break;
         case "3":
-          //   "Try your attacks?? // see attacks?";
+          //   "see attacks?/char"audio"??";
           //function()
           break;
         case "4":
@@ -50,31 +57,30 @@ module.exports = class Game {
   async pickClass() {
     let choice;
     while (choice !== "6") {
-      console.log("\nChoose a class to play as\n");
       choice = await prompt(
-        "\n1: Assasin\n2: Barbarian\n3: Wizard\n4: Necromancer\n5: See class bio\n6: Return\nEnter choice:"
+        "\nChoose a class to play as\n1: Assasin\n2: Barbarian\n3: Wizard\n4: Necromancer\n5: See class bio\n6: Return\nEnter choice:"
       );
 
       switch (choice) {
         case "1":
           console.log("Assasin");
           // function() för assasin från factory
-          // this.pickrace();
+          await this.pickRace();
           break;
         case "2":
           console.log("Barbarian");
           // function() för barbarian från factory
-          // this.pickrace();
+          await this.pickRace();
           break;
         case "3":
           console.log("Wizard");
           // function() för wizard från factory
-          // this.pickrace();
+          await this.pickRace();
           break;
         case "4":
           console.log("Necromancer");
           // function() för Necromancer från factory
-          // this.pickrace();
+          await this.pickRace();
           break;
         case "5":
           ClassBio.getAllBios();
@@ -88,43 +94,43 @@ module.exports = class Game {
   async pickRace() {
     let choice;
 
-    while (choice !== "7") console.log("\nChoose a race to play as\n");
-     choice = await prompt(
-      "\n1: Human\n2: Troll\n3: Dwarf\n4: Ogre\n5: Elf\n6: Orc\n7: Return\nEnter choice: "
-    );
+    while (choice !== "7") {
+      choice = await prompt(
+        "\nChoose a race to play as\n1: Human\n2: Troll\n3: Dwarf\n4: Ogre\n5: Elf\n6: Orc\n7: Return\nEnter choice: "
+      );
 
-    switch (choice) {
-      case "1":
-        "human";
-        // function()
-        break;
-      case "2":
-        "Troll";
-        // function()
-        break;
-      case "3":
-        "dwarf";
-        // function()
-        break;
-      case "4":
-        "ogre";
-        // function()
-        break;
-      case "5":
-        "elf";
-        // function()
-        break;
-      case "6":
-        "orc";
-        // function()
-        break;
-      case "7":
-        break;
+      switch (choice) {
+        case "1":
+          console.log("human");
+          await this.chooseCharacterName();
+          break;
+        case "2":
+          console.log("Troll");
+          await this.chooseCharacterName();
+          break;
+        case "3":
+          console.log("dwarf");
+          await this.chooseCharacterName();
+          break;
+        case "4":
+          console.log("ogre");
+          await this.chooseCharacterName();
+          break;
+        case "5":
+          console.log("elf");
+          await this.chooseCharacterName();
+          break;
+        case "6":
+          console.log("orc");
+          await this.chooseCharacterName();
+          break;
+        case "7":
+          break;
+      }
     }
   }
 
-  // från factory?
   async chooseCharacterName() {
-    const name = await prompt("\nChoose a name:\n ");
+    const name = await prompt("\nChoose a character name: ");
   }
 };
