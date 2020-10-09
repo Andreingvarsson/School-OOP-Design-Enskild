@@ -25,4 +25,8 @@ module.exports = class Necromancer extends CharacterFrame {
 
     // attack or quote that i can use an adaptor to make life of.
   // function
+
+  undead(){
+    return 'My undead minions will consume you!'
+  }
 };

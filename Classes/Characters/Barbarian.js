@@ -23,4 +23,8 @@ module.exports = class Barbarian extends CharacterFrame {
 
     // attack or quote that i can use an adaptor to make life of.
   // function
+
+  destroy(){
+    return 'My weapons thirst for blood!'
+  }
 };
