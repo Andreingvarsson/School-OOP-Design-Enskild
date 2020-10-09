@@ -5,8 +5,10 @@ const prompt = require("async-prompt");
 // const CharacterFrame = require("../Characters/CharacterFrame");
 // const UserInteraction = require('../Interaction/UserInteraction')
 const ClassBio = require("../CharInformation/ClassBio");
+const CharacterFactory = require("../Factory/CharacterFactory");
 
 module.exports = class GameBoard {
+  characterList = [];
   // Singleton design pattern möjligtvis??
   isGameCreated = false;
 
@@ -19,6 +21,8 @@ module.exports = class GameBoard {
 
   async welcomeToPlayField() {
     console.log("   ___________________________ ");
+    console.log("**|                           |**");
+    console.log("̿*|  ̿̿ ̿’̿’̵͇̿̿з=(◣_◢)=ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿     |**");
     console.log("**|                           |**");
     console.log("**| Welcome to this game!     |**");
     console.log("**| Create your own character |**");
@@ -37,14 +41,14 @@ module.exports = class GameBoard {
 
       switch (choice) {
         case "1":
-          await this.pickClass();
+          await this.characterCreation();
           break;
         case "2":
           //   "See all characters?";
-          //function()
+          this.displayAllCharacters();
           break;
         case "3":
-          //   "see attacks?/char"audio"??";
+          //   "see attacks?/char"audio"??"; ett till val som är välja attacker??
           //function()
           break;
         case "4":
@@ -63,25 +67,13 @@ module.exports = class GameBoard {
 
       switch (choice) {
         case "1":
-          console.log("Assasin");
-          // function() för assasin från factory
-          await this.pickRace();
-          break;
+          return "Assasin";
         case "2":
-          console.log("Barbarian");
-          // function() för barbarian från factory
-          await this.pickRace();
-          break;
+          return "Barbarian";
         case "3":
-          console.log("Wizard");
-          // function() för wizard från factory
-          await this.pickRace();
-          break;
+          return "Wizard";
         case "4":
-          console.log("Necromancer");
-          // function() för Necromancer från factory
-          await this.pickRace();
-          break;
+          return "Necromancer";
         case "5":
           ClassBio.getAllBios();
           break;
@@ -101,36 +93,56 @@ module.exports = class GameBoard {
 
       switch (choice) {
         case "1":
-          console.log("human");
-          await this.chooseCharacterName();
-          break;
+          return "human";
         case "2":
-          console.log("Troll");
-          await this.chooseCharacterName();
-          break;
+          return "Troll";
         case "3":
-          console.log("dwarf");
-          await this.chooseCharacterName();
-          break;
+          return "dwarf";
         case "4":
-          console.log("ogre");
-          await this.chooseCharacterName();
-          break;
+          return "ogre";
         case "5":
-          console.log("elf");
-          await this.chooseCharacterName();
-          break;
+          return "elf";
         case "6":
-          console.log("orc");
-          await this.chooseCharacterName();
-          break;
+          return "orc";
         case "7":
           break;
       }
     }
   }
 
-  async chooseCharacterName() {
+  async pickName() {
     const name = await prompt("\nChoose a character name: ");
+    return name;
+  }
+
+  async characterCreation() {
+    let newCharacter = {
+      class: "",
+      race: "",
+      name: "",
+    };
+
+    newCharacter.class = await this.pickClass();
+    newCharacter.race = await this.pickRace();
+    newCharacter.name = await this.pickName();
+    let newChar = CharacterFactory.CreateNewCharacter(newCharacter);
+    console.log(newCharacter);
+    console.log(newChar);
+    this.addCharacterToDisplay(newChar);
+  }
+
+  addCharacterToDisplay(character) {
+    this.characterList.push(character);
+    console.log(this.characterList);
+  }
+
+  displayAllCharacters() {
+    console.log(`\n~~ Created Characters ~~\n`);
+    console.log(`̿ ̿̿ ̿’̿’̵͇̿̿з=(◣_◢)=ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿`);
+    for (let char of this.characterList) {
+      console.log(`\nName: ${char.name}`);
+      console.log(`Race: ${char.race}`);
+      console.log(`Class: ${char.class}`);
+    }
   }
 };
