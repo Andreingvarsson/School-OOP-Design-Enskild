@@ -26,7 +26,7 @@ module.exports = class GameBoard {
     console.log("**|                           |**");
     console.log("**| Welcome to this game!     |**");
     console.log("**| Create your own character |**");
-    console.log("**| and do something          |**");
+    console.log("**| and say something         |**");
     console.log("**|___________________________|**");
   }
 
@@ -60,6 +60,7 @@ module.exports = class GameBoard {
 
   async pickClass() {
     let choice;
+
     while (choice !== "6") {
       choice = await prompt(
         "\nChoose a class to play as\n1: Assasin\n2: Barbarian\n3: Wizard\n4: Necromancer\n5: See class bio\n6: Return\nEnter choice:"

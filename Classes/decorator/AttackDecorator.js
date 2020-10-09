@@ -1,6 +1,8 @@
 module.exports = class AttackDecorator {
 
     
+// Välja helt själv eller ska jag overrida och ge attacker??
+
     necromancerAtk = [
         { name: "Poison nova", damage: 10 },
         { name: "Corpse explosion", damage: 15 },

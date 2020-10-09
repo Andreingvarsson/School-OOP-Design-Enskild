@@ -2,29 +2,15 @@ const CharacterFrame = require("./CharacterFrame");
 
 module.exports = class Barbarian extends CharacterFrame {
   class;
-  // attacks;
 
   constructor(name, race) {
     super(name, race);
-
     this.class = "Barbarian";
-    // this.attacks = attacks;
   }
-
-  // attacks = [
-  //   { name: "Bash", damage: 5 },
-  //   { name: "Frenzy", damage: 10 },
-  //   { name: "Whirlwind", damage: 15 },
-  // ];
-
-  async myClass() {
-    return `${this.class}`;
-  }
-
-    // attack or quote that i can use an adaptor to make life of.
+  // attack or quote that i can use an adaptor to make life of.
   // function
 
-  destroy(){
-    return 'My weapons thirst for blood!'
+  destroy() {
+    return "My weapons thirst for blood!";
   }
 };
