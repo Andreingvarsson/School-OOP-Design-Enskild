@@ -11,13 +11,16 @@ module.exports = class Barbarian extends CharacterFrame {
     // this.attacks = attacks;
   }
 
-  attacks = [
-    { name: "Bash", damage: 5 },
-    { name: "Frenzy", damage: 10 },
-    { name: "Whirlwind", damage: 15 },
-  ];
+  // attacks = [
+  //   { name: "Bash", damage: 5 },
+  //   { name: "Frenzy", damage: 10 },
+  //   { name: "Whirlwind", damage: 15 },
+  // ];
 
   async myClass() {
     return `${this.class}`;
   }
+
+    // attack or quote that i can use an adaptor to make life of.
+  // function
 };

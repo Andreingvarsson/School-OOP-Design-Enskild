@@ -1,5 +1,6 @@
 module.exports = class AttackDecorator {
 
+    
     necromancerAtk = [
         { name: "Poison nova", damage: 10 },
         { name: "Corpse explosion", damage: 15 },
@@ -34,6 +35,8 @@ module.exports = class AttackDecorator {
         if(!object.class){
             throw new Error('You need a specific class to  learn attacks')
         }
+
+        // switch?
     }
 
 

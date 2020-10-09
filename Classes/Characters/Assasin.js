@@ -12,13 +12,16 @@ module.exports = class Assasin extends CharacterFrame {
      
   }
 
-  attacks = [
-    { name: "Jab", damage: 5 },
-    { name: "Poison", damage: 10 },
-    { name: "Impale", damage: 15 },
-  ];
+  // attacks = [
+  //   { name: "Jab", damage: 5 },
+  //   { name: "Poison", damage: 10 },
+  //   { name: "Impale", damage: 15 },
+  // ];
 
   async myClass() {
     return `${this.class}`;
   }
+
+    // attack or quote that i can use an adaptor to make life of.
+  // function
 };
