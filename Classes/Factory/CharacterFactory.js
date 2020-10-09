@@ -11,19 +11,19 @@ module.exports = class CharacterFactory {
     switch (character.class) {
       case "Assasin":
         let as = new Assasin(character.name, character.race);
-        console.log(`\n${as.name} says: ` + SpecialMoveAdapter.saySomething(as));
+        console.log(`\n${as.name} ` + SpecialMoveAdapter.saySomething(as));
         return as;
       case "Barbarian":
         let barb = new Barbarian(character.name, character.race);
-        console.log(`\n${barb.name} says: ` + SpecialMoveAdapter.saySomething(barb));
+        console.log(`\n${barb.name} ` + SpecialMoveAdapter.saySomething(barb));
         return barb;
       case "Necromancer":
         let necro = new Necromancer(character.name, character.race);
-        console.log(`\n${necro.name} says: ` + SpecialMoveAdapter.saySomething(necro));
+        console.log(`\n${necro.name} ` + SpecialMoveAdapter.saySomething(necro));
         return necro;
       case "Wizard":
         let wiz = new Wizard(character.name, character.race);
-        console.log(`\n${wiz.name} says: ` + SpecialMoveAdapter.saySomething(wiz));
+        console.log(`\n${wiz.name} ` + SpecialMoveAdapter.saySomething(wiz));
         return wiz;
     }
   }

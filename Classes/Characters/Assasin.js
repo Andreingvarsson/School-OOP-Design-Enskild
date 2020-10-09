@@ -12,6 +12,6 @@ module.exports = class Assasin extends CharacterFrame {
   // function
 
   sneak() {
-    return "Shh..Im looking for prey to ambush!";
+    return "whispers Shh..Im looking for prey to ambush!";
   }
 };

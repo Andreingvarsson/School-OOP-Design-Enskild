@@ -12,6 +12,6 @@ module.exports = class Wizard extends CharacterFrame {
   // function
 
   pyre() {
-    return "My magic will incinerate my enemies!";
+    return "boasts My magic will incinerate my enemies!";
   }
 };

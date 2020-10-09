@@ -127,14 +127,14 @@ module.exports = class GameBoard {
     newCharacter.race = await this.pickRace();
     newCharacter.name = await this.pickName();
     let newChar = CharacterFactory.CreateNewCharacter(newCharacter);
-    console.log(newCharacter);
-    console.log(newChar);
+    // console.log(newCharacter);
+    // console.log(newChar);
     this.addCharacterToDisplay(newChar);
   }
 
   addCharacterToDisplay(character) {
     this.characterList.push(character);
-    console.log(this.characterList);
+    // console.log(this.characterList);
   }
 
   displayAllCharacters() {

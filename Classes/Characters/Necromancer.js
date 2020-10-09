@@ -14,6 +14,6 @@ module.exports = class Necromancer extends CharacterFrame {
   // function
 
   undead() {
-    return "My undead minions will consume you!";
+    return "dradfully says My undead minions will consume you!";
   }
 };
