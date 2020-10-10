@@ -5,13 +5,10 @@ module.exports = class Wizard extends CharacterFrame {
 
   constructor(name, race) {
     super(name, race);
-
     this.class = "Wizard";
   }
-  // attack or quote that i can use an adaptor to make life of.
-  // function
 
   pyre() {
-    return "boasts My magic will incinerate my enemies!";
+    return "boasts - My magic will incinerate my enemies!";
   }
 };

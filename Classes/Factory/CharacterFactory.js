@@ -14,25 +14,25 @@ module.exports = class CharacterFactory {
         let as = new Assasin(character.name, character.race);
         console.log(`\n${as.name} ` + ClassMessageAdapter.saySomething(as));
         AttackDecoractor.teachAttacks(as);
-        console.log(as);
+        // console.log(as);
         return as;
       case "Barbarian":
         let barb = new Barbarian(character.name, character.race);
         console.log(`\n${barb.name} ` + ClassMessageAdapter.saySomething(barb));
         AttackDecoractor.teachAttacks(barb);
-        console.log(barb);
+        // console.log(barb);
         return barb;
       case "Necromancer":
         let necro = new Necromancer(character.name, character.race);
         console.log(`\n${necro.name} ` + ClassMessageAdapter.saySomething(necro));
         AttackDecoractor.teachAttacks(necro);
-        console.log(necro);
+        // console.log(necro);
         return necro;
       case "Wizard":
         let wiz = new Wizard(character.name, character.race);
         console.log(`\n${wiz.name} ` + ClassMessageAdapter.saySomething(wiz));
         AttackDecoractor.teachAttacks(wiz);
-        console.log(wiz);
+        // console.log(wiz);
         return wiz;
     }
   }

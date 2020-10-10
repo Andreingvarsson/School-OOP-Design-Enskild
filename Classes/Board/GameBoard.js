@@ -142,11 +142,8 @@ module.exports = class GameBoard {
         console.log(`Race: ${char.race}`);
         console.log(`Class: ${char.class}`);
         
-        console.log(`Starting attacks: ${attacks}`)
+        console.log(`Starting attacks of the ${char.class}: ${attacks}`)
       }
     }
   }
 };
-// let spells = char.spells.map((x) => x.name);
-
-//       let spellsDisplay = spells.join(", ");

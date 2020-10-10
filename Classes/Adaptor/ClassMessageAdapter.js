@@ -1,4 +1,4 @@
-module.exports = class SpecialMoveAdapter {
+module.exports = class ClassMessageAdapter {
   constructor() {}
 
   static translateQuoteList = {
