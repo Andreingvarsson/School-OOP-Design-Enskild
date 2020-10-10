@@ -1,17 +1,12 @@
-const GameBoard = require('./Classes/Board/GameBoard')
-
+const GameBoard = require("./Classes/Board/GameBoard");
 
 let game = new GameBoard();
 game.welcomeToPlayField();
-game.mainMenu()
-
-
-
+game.mainMenu();
 
 /* 
-Creational - Singleton, factory; [need 1x]
-Structural - Facade, Adapter {todo - decorator} [need 2x]
-Behaviour - {todo ex- template, visitor, memento} [need 1x]
-
-        5 design patterns in total, together with atleast 10 classes.
+Creational - Singleton - (GameBoard), factory - (CharacterFactory);
+Structural - Facade - (GameBoard), Adapter - (ClassMessageAdapter), decorator - (AttackDecorator);
+Behaviour - Template - (CharacterFrame -> subclasses)
+5 design patterns in total, together with atleast 10 classes.
 */

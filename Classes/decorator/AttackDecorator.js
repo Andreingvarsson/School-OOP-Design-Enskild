@@ -1,7 +1,6 @@
 module.exports = class AttackDecorator {
-  // Välja helt själv eller ska jag overrida och ge attacker??
 
-  // ta bort damage då jag inte använder det?? 
+    // Decorator design pattern
 
   static necromancerAtk = [
     { name: "Poison nova"},
@@ -48,7 +47,7 @@ module.exports = class AttackDecorator {
       case "Wizard":
         return (object.attacks = this.wizardAtk);
       case "Necromancer":
-        return (object.attacks = this.wizardAtk);
+        return (object.attacks = this.necromancerAtk);
     }
   }
 };

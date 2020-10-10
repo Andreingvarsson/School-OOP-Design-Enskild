@@ -1,9 +1,4 @@
 const prompt = require("async-prompt");
-// const Assasin = require("../Characters/Assasin");
-// const Barbarian = require("../Characters/Barbarian");
-// const Wizard = require("../Characters/Wizard");
-// const CharacterFrame = require("../Characters/CharacterFrame");
-// const UserInteraction = require('../Interaction/UserInteraction')
 const ClassBio = require("../CharInformation/ClassBio");
 const CharacterFactory = require("../Factory/CharacterFactory");
 
@@ -12,7 +7,7 @@ module.exports = class GameBoard {
 
   isGameCreated = false;
 
-  // Singleton design pattern, only one can be created.
+  // Singleton design pattern
   constructor() {
     if (GameBoard.isGameCreated) {
       throw new Error("Only one GameBoard can exist at a time!");
@@ -117,32 +112,25 @@ module.exports = class GameBoard {
     newCharacter.race = await this.pickRace();
     newCharacter.name = await this.pickName();
     let newChar = CharacterFactory.createNewCharacter(newCharacter);
-    // console.log(newCharacter);
-    // console.log(newChar);
     this.addCharacterToDisplay(newChar);
   }
 
   addCharacterToDisplay(character) {
     this.characterList.push(character);
-    // console.log(this.characterList);
   }
 
   displayAllCharacters() {
-   
-
-
     if (this.characterList.length === 0) {
       console.log("\nNo characters have been created");
     } else {
       console.log(`\n~~ Created Characters ~~\n`);
       console.log(`̿ ̿̿ ̿’̿’̵͇̿̿з=(◣_◢)=ε/̵͇̿̿/’̿’̿ ̿ ̿̿ ̿̿ ̿̿`);
       for (let char of this.characterList) {
-        let attacks = char.attacks.map((x) => x.name)
+        let attacks = char.attacks.map((x) => x.name);
         console.log(`\nName: ${char.name}`);
         console.log(`Race: ${char.race}`);
         console.log(`Class: ${char.class}`);
-        
-        console.log(`Starting attacks of the ${char.class}: ${attacks}`)
+        console.log(`Starting attacks of the ${char.class}: ${attacks}`);
       }
     }
   }

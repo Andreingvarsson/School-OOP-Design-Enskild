@@ -1,4 +1,7 @@
 module.exports = class ClassMessageAdapter {
+
+  // Adaptor design pattern 
+
   constructor() {}
 
   static translateQuoteList = {
