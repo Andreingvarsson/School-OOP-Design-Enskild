@@ -4,27 +4,31 @@ module.exports = class AttackDecorator {
   // ta bort damage då jag inte använder det?? 
 
   static necromancerAtk = [
-    { name: "Poison nova", damage: 10 },
-    { name: "Corpse explosion", damage: 15 },
-    { name: "Bone spear", damage: 20 },
+    { name: "Poison nova"},
+    { name: "Corpse explosion"},
+    { name: "Bone spear"},
+    {name: "Summon undead"}
   ];
 
   static wizardAtk = [
-    { name: "Frost bolt", damage: 10 },
-    { name: "Fire blast", damage: 15 },
-    { name: "Pyroblast", damage: 20 },
+    { name: "Frost bolt"},
+    { name: "Fire blast"},
+    { name: "Pyroblast"},
+    {name: "Incinerate"}
   ];
 
   static barbarianAtk = [
-    { name: "Bash", damage: 5 },
-    { name: "Frenzy", damage: 10 },
-    { name: "Whirlwind", damage: 15 },
+    { name: "Bash"},
+    { name: "Frenzy"},
+    { name: "Whirlwind"},
+    {name: "Ancients call"}
   ];
 
   static assasinAtk = [
-    { name: "Jab", damage: 5 },
-    { name: "Poison", damage: 10 },
-    { name: "Impale", damage: 15 },
+    { name: "Jab"},
+    { name: "Poison"},
+    { name: "Impale"},
+    {name: "Death from above"}
   ];
 
   constructor() {
@@ -38,13 +42,13 @@ module.exports = class AttackDecorator {
 
     switch (object.class) {
       case "Assasin":
-        return (object.assasinAtk = this.assasinAtk);
+        return (object.attacks = this.assasinAtk);
       case "Barbarian":
-        return (object.barbarianAtk = this.barbarianAtk);
+        return (object.attacks = this.barbarianAtk);
       case "Wizard":
-        return (object.wizardAtk = this.wizardAtk);
+        return (object.attacks = this.wizardAtk);
       case "Necromancer":
-        return (object.necromancerAtk = this.wizardAtk);
+        return (object.attacks = this.wizardAtk);
     }
   }
 };
