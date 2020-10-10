@@ -11,4 +11,8 @@ module.exports = class Barbarian extends CharacterFrame {
   destroy() {
     return "yells - My weapons thirst for blood!";
   }
+
+  welcome(){
+    console.log(`\nAs a ${this.class} you fight and bludgeon anyone who oppose you!`) 
+  }
 };

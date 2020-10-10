@@ -1,10 +1,18 @@
 module.exports = class characterFrame {
-  // More constructor options, ex health, attacks, armor, maybe a biography. Have to decide.
   name;
   race;
 
   constructor(name, race) {
     this.name = name;
     this.race = race;
+  }
+
+  // template design pattern
+  characterIntroduction(){
+    this.welcome(); 
+  }
+
+  welcome(){
+    throw new Error('You cant do that..')
   }
 };

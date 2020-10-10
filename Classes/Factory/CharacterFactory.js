@@ -5,6 +5,7 @@ const Assasin = require("../Characters/Assasin");
 const ClassMessageAdapter = require("../Adaptor/ClassMessageAdapter");
 const AttackDecoractor = require("../decorator/AttackDecorator");
 
+
 module.exports = class CharacterFactory {
   constructor() {}
 
@@ -13,26 +14,26 @@ module.exports = class CharacterFactory {
       case "Assasin":
         let as = new Assasin(character.name, character.race);
         console.log(`\n${as.name} ` + ClassMessageAdapter.saySomething(as));
+        as.characterIntroduction();
         AttackDecoractor.teachAttacks(as);
-        // console.log(as);
         return as;
       case "Barbarian":
         let barb = new Barbarian(character.name, character.race);
         console.log(`\n${barb.name} ` + ClassMessageAdapter.saySomething(barb));
+        barb.characterIntroduction();
         AttackDecoractor.teachAttacks(barb);
-        // console.log(barb);
         return barb;
       case "Necromancer":
         let necro = new Necromancer(character.name, character.race);
         console.log(`\n${necro.name} ` + ClassMessageAdapter.saySomething(necro));
+        necro.characterIntroduction();
         AttackDecoractor.teachAttacks(necro);
-        // console.log(necro);
         return necro;
       case "Wizard":
         let wiz = new Wizard(character.name, character.race);
         console.log(`\n${wiz.name} ` + ClassMessageAdapter.saySomething(wiz));
+        wiz.characterIntroduction();
         AttackDecoractor.teachAttacks(wiz);
-        // console.log(wiz);
         return wiz;
     }
   }
